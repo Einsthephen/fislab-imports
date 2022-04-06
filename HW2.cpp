@@ -1,30 +1,25 @@
 #include <iostream>
 #include <fstream> // escribir o leer archivos
 #include <cmath>
-int sph_function(unsigned n, double x);
+double sph_value(unsigned n, double x);
 
-
-int main(int argc, char **argv)//aqui pones la funcion y le cambias variables de acuerdo a lo que necesites, en este caso n siendo el valor variable
+int main(int argc, char **argv)
 {
-  std::ofstream fout("data.txt");
-  for (int x = 0; x <= 10; x = x + 1){
+  std::ofstream fout{"data.txt"};
+   for(double x = 0;  x <= 10; x= x+0.05) {
+
+     fout << x <<"\t"<< sph_value(0, x)<<"   "<< sph_value(1, x) << '\n';
+
     
-    std::cout << x <<"\t"<< sph_function(0, x)<<"   "<< sph_function(1, x) << '\n';
-
-    fout.close();
-
   }
-  
-
-  return 0;  
+   fout.close();
+    return 0;  
 }
 
-int sph_function(unsigned n = 0, double x = 0){
+double sph_value(unsigned n = 0, double x = 0){
   //aqui piensas en que va a desarrollar la funcion
-  std::ofstream fout("data.txt");
-  std::sph_bessel(n , x);
+  double value = std::sph_bessel(n , x);
 
-  four.close();
-  return 0;
+  return value;
 }
 
