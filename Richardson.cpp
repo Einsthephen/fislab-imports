@@ -21,10 +21,10 @@ int main(void)
     double drf = richardson_derivFWD(x, h);
     
     std::cout << h << "\t"
-              << fabs(df-dexact)/dexact << "\t"
-              << fabs(dc-dexact)/dexact << "\t"
-	      << fabs(drf-dexact)/dexact << "\t"
-              << fabs(drc-dexact)/dexact << "\n";
+              << fabs(df-dexact/dexact) << "\t"
+              << fabs(dc-dexact/dexact) << "\t"
+	      << fabs(drf-dexact/dexact) << "\t"
+              << fabs(drc-dexact/dexact) << "\n";
   }
 
   return 0;
